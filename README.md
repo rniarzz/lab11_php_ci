@@ -168,18 +168,14 @@ alamat: http://localhost:8080/page/tos
 Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik seperti diatas dengan membuat file baru dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya seperti berikut.
 
 ```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <title><?= $title; ?></title>
-</head>
-<body>
-      <h1><?= $title; ?></h1>
-      <hr>
-      <p><?= $content; ?></p>
-</body>
-</html>
+public function about()
+{
+   return view('about', [
+      'title' => 'Halaman Abot',
+      'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi
+halaman ini.'
+   ]);
+}
 ```
 
 ## MEMBUAT LAYOUT WEB DENGAN CSS
