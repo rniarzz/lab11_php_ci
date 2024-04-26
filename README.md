@@ -106,8 +106,6 @@ Kemudian buka CLI dan jalankan perintah tersebut. Jika mendapat tampilan seperti
 
 Selanjutnya cobalah untuk mengakses route yang telah dibuat dengan mengakses alamat URL http://localhost:8080/about
 
-![Cuplikan layar 2024-04-26 121520](https://github.com/rniarzz/lab11_php_ci/assets/115542704/8cf50d4e-746c-448c-bd76-20f8e65b3916)
-
 Jika mendapat tampilan seperti diatas, maka artinya file atau pages tersebut tidak ada. Dan untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang sesuai dengan routing yang dibuat yaitu Controller Page.
 
 ## MEMBUAT CONTROLLER
