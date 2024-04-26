@@ -56,7 +56,7 @@ Untuk melakukan instalasi codeigniter 4 dapat dilakukan dengan dua cara , yaitu 
   -  Ubah nama direktory framework-4.x.xx menjadi ci4
   -  Buka browser dengan alamat http://localhost/Lab11Web/lab11_php_ci/ci4/public/
 
-![image](https://github.com/roswanda11/lab11web/assets/115516632/dce6c640-bbbe-40b6-beb6-f5c2a2201a96)
+![Screenshot (948)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/82953612-1fc3-4283-8159-87571c987529)
 
 Pilih codeigniter 4 kemudian tekan download dan tunggu hingga terinstall.
 
@@ -64,13 +64,14 @@ Pilih codeigniter 4 kemudian tekan download dan tunggu hingga terinstall.
 
 Codeigniter 4 menyediakan CLI untuk dapat mempermudah proses development. Untuk mengakses CLI bukalah terminal/command prompt. Kemudian arahkan lokasi direktori sesuai dengan direktori kerja project dibuat. (xampp/htdocs/Lab11Web/Lab11_php_ci/ci4)
 
-![Screenshot (572)](https://github.com/roswanda11/lab11web/assets/115516632/fcb87b6e-e614-4c82-89d9-10b684938acc)
+![Screenshot (953)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/58a8eb93-3c0b-4c77-bbec-ff1e1914f757)
 
 Dan masukan perintah dibawah untuk dapat menjalankan guna memanggil CLI Codeigniter.
 
 ```php
 php spark
 ```
+![Screenshot (949)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/4c044d5d-c942-4827-97a4-2d0cbd1538ae)
 
 ## PENGAKTIFAN MODE DEBUGGING
 
@@ -78,16 +79,16 @@ Codeigniter 4 menyediakan fitur debugging untuk memudahkan developer untuk menge
 
 Maka untuk mengaktifkannya, Pertama ubahlah file env menjadi .env . Kemudian ubah nilai konfigurasi pada environment variable CI_ENVIRONMENT menjadi development seperti gambar berikut.
 
-![Screenshot (574)](https://github.com/roswanda11/lab11web/assets/115516632/aee275f6-9c22-4617-a33e-94a71b38457a)
+![Cuplikan layar 2024-04-26 120325](https://github.com/rniarzz/lab11_php_ci/assets/115542704/fbc6600f-c8ff-4f92-aa2d-450f15eef418)
 
 Selanjutnya hilangkanlah ; pada akhir kode ketika kalian membuka file app/Controller/Home.php seperti berikut.
 
-![Screenshot (575)](https://github.com/roswanda11/lab11web/assets/115516632/29f53499-8c64-4597-92a3-a4cbbd015651)
+![Cuplikan layar 2024-04-26 120751](https://github.com/rniarzz/lab11_php_ci/assets/115542704/016aac79-8e36-46c3-bd64-27d219a304cf)
+
 
 Dan terjadilah error pada aplikasi yang akan ditampilkan pesan kesalahan seperti berikut.
 
-![menambahkan_gambar](img/TAMPILAN%20ERROR.png)
-
+![Screenshot (950)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/0dee292a-da87-4092-be2a-c0c53b1c6b64)
 
 ## PEMBUATAN ROUTE BARU
 
@@ -101,17 +102,15 @@ $routes->get('/faqs', 'Page::faqs');
 
 Kemudian buka CLI dan jalankan perintah tersebut. Jika mendapat tampilan seperti dibawah maka penambahan routes sudah benar.
 
-![menambahkan_gambar](img/CEK%20ROUTES.png)
+![Cuplikan layar 2024-04-26 115306](https://github.com/rniarzz/lab11_php_ci/assets/115542704/fb45a354-6be2-4f4b-b812-71e7e7c27c4e)
 
 Selanjutnya cobalah untuk mengakses route yang telah dibuat dengan mengakses alamat URL http://localhost:8080/about
 
-![menambahkan_gambar](img/CEK%20WEB%20ROUTES.png)
+![Cuplikan layar 2024-04-26 121520](https://github.com/rniarzz/lab11_php_ci/assets/115542704/8cf50d4e-746c-448c-bd76-20f8e65b3916)
 
 Jika mendapat tampilan seperti diatas, maka artinya file atau pages tersebut tidak ada. Dan untuk dapat mengakses halaman tersebut, harus dibuat terlebih dahulu Controller yang sesuai dengan routing yang dibuat yaitu Controller Page.
 
 ## MEMBUAT CONTROLLER
-
-![menambahkan_gambar](img/MEMBUAT%20CONTROLLER.png)
 
 Selanjutnya adalah membuat Controller Page seperti diatas. Buat file baru dengan nama page.php pada direktori Controller kemudian isi kodenya seperti berikut.
 
@@ -137,6 +136,11 @@ class Page extends BaseController
 }
 ```
 
+Selanjutnya refresh Kembali browser, maka akan ditampilkan hasilnya yaotu halaman sudah
+dapat diakses.
+
+![lab 7 (1)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/6c88c8b8-515a-4bb3-a51b-1f269deb1d81)
+
 ## AUTO ROUTING
 
 Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroutenya dapat diubah menggunakan nilai variabelnya. Dan ntuk menonaktifkannya ubah nilai true menjadi false.
@@ -147,22 +151,35 @@ $routes->setAutoRoute(true);
 
 Tambahkan method baru pada Controller Page seperti berikut.
 
-![menambahkan_gambar](img/AUTO%20ROUTING.png)
+public function tos()
+{
+echo "ini halaman Term of Services";
+}
+
+Method ini belum ada pada routing, sehingga cara mengaksesnya dengan menggunakan
+alamat: http://localhost:8080/page/tos
+
+![lab 7 (2)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/234b19c8-8441-4f0f-9289-033d9f2d9f8b)
 
 ## MEMBUAT VIEW
 
-![menambahkan_gambar](img/BUAT%20VIEW.png)
+![lab 7 (3)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/18ed9e6a-82fc-4b7d-8ad4-8099f0c31dde)
 
 Selanjutnya adalah membuat view untuk tampilan web agar lebih menarik seperti diatas dengan membuat file baru dengan nama about.php pada direktori view (app/view/about.php) kemudian isi kodenya seperti berikut.
 
 ```php
-public function about()
-    {
-        return view('about', [
-            'title' => 'Halaman About',
-            'content' => 'Ini adalah halaman about yang menjelaskan tentang isi halaman ini.'
-        ]);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title><?= $title; ?></title>
+</head>
+<body>
+      <h1><?= $title; ?></h1>
+      <hr>
+      <p><?= $content; ?></p>
+</body>
+</html>
 ```
 
 ## MEMBUAT LAYOUT WEB DENGAN CSS
@@ -236,4 +253,4 @@ Selanjutnya, ubahlah file about pada app view dengan kode berikut.
 
 Maka ketika halaman web tersebut kalian refresh, kalian akan mendapat tampilan seperti gambar dibawah ini.
 
-![menambahkan_gambar](img/LAYOUT%20WEB.png)
+![lab 7 (4)](https://github.com/rniarzz/lab11_php_ci/assets/115542704/7335d7b5-3b38-453b-bb89-0879ce626693)
